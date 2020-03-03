@@ -38,8 +38,14 @@ export class FilmService {
   // public films = this._films;
 
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, @Inject(LOCALE_ID) private locale) {
+
     debugger
-  }
+    if (!storage.get('films')) {
+      storage.set('films', this._films);
+    } else {
+      this._films = storage.get('films');
+    }
+  }//asdasdasdasdas
 
 
   get films() {
@@ -52,6 +58,7 @@ export class FilmService {
 
   removeFilm(film) {
     this._films = this._films.filter((data) => data.name !== film.name);
+    this.storage.set('films', this._films);
   }
 
 }

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilmComponent } from './components/film/film.component';
 import { MyShadowDirective } from './directives/my-shadow.directive';
 import { CapitalizeFirstPipe } from './pipe/capitalize-first.pipe';
-import { FilmService } from '../services/film.service';
+import { FilmFormComponent } from './components/film-form/film-form.component';
+import { FilFormReactiveComponent } from './components/fil-form-reactive/fil-form-reactive.component';
 
 
 
@@ -11,17 +13,23 @@ import { FilmService } from '../services/film.service';
   declarations: [
     FilmComponent,
     MyShadowDirective,
-    CapitalizeFirstPipe
+    CapitalizeFirstPipe,
+    FilmFormComponent,
+    FilFormReactiveComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    FilmService
+
   ],
   exports: [
     FilmComponent,
-    CapitalizeFirstPipe
+    FilmFormComponent,
+    CapitalizeFirstPipe,
+    FilFormReactiveComponent
   ]
 })
 export class SharedModule { }

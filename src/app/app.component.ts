@@ -41,4 +41,10 @@ export class AppComponent implements OnInit, DoCheck, OnDestroy {
   nuevaFecha() {
     return new Date();
   }
+
+  saveFilm(film) {
+    debugger
+    this.filmService.addFilm(film);
+    debugger
+  }
 }

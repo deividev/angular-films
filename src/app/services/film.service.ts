@@ -1,7 +1,9 @@
 import { Injectable, Inject, LOCALE_ID } from '@angular/core';
 import { SESSION_STORAGE, LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FilmService {
 
   private _films = [
@@ -39,7 +41,6 @@ export class FilmService {
 
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, @Inject(LOCALE_ID) private locale) {
 
-    debugger
     if (!storage.get('films')) {
       storage.set('films', this._films);
     } else {
@@ -58,6 +59,11 @@ export class FilmService {
 
   removeFilm(film) {
     this._films = this._films.filter((data) => data.name !== film.name);
+    this.storage.set('films', this._films);
+  }
+
+  addFilm(film) {
+    this._films.push(film);
     this.storage.set('films', this._films);
   }
 

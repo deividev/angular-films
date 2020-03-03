@@ -1,12 +1,15 @@
 <div class="container">
+  <app-fil-form-reactive></app-fil-form-reactive>
+  <app-film-form (save)="saveFilm($event)"></app-film-form>
   <div class="card-deck-wrapper">
     <div class="card-deck">
-      <app-film 
-        *ngFor="let film of filmService.films; let even = even" 
-        [data]="film" 
+      <app-film
+        *ngFor="let film of filmService.films; let even = even"
+        [data]="film"
         [isEven]="even"
         (remove)="eliminar($event)">
       </app-film>
     </div>
   </div>
 </div>
+

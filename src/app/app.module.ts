@@ -21,7 +21,7 @@ registerLocaleData(localeEs, 'es-ES');
   ],
   providers: [
     // FilmService,
-    { provide: FilmService, useClass: FilmService},
+    //{ provide: FilmService, useClass: FilmService},
     { provide: LOCALE_ID, useValue: 'es-ES' }
   ],
   bootstrap: [AppComponent]

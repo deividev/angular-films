@@ -43,8 +43,6 @@ export class AppComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   saveFilm(film) {
-    debugger
     this.filmService.addFilm(film);
-    debugger
   }
 }

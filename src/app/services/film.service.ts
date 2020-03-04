@@ -46,7 +46,7 @@ export class FilmService {
     } else {
       this._films = storage.get('films');
     }
-  }//asdasdasdasdas
+  }
 
 
   get films() {

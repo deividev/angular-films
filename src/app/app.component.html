@@ -1,15 +1,14 @@
-<div class="container">
-  <app-fil-form-reactive></app-fil-form-reactive>
-  <app-film-form (save)="saveFilm($event)"></app-film-form>
-  <div class="card-deck-wrapper">
-    <div class="card-deck">
-      <app-film
-        *ngFor="let film of filmService.films; let even = even"
-        [data]="film"
-        [isEven]="even"
-        (remove)="eliminar($event)">
-      </app-film>
-    </div>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <a class="navbar-brand" routerLink="/film">Film</a>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link" routerLink="/film">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/create">Create</a>
+      </li>
+    </ul>
   </div>
-</div>
-
+</nav>
+<router-outlet></router-outlet>
